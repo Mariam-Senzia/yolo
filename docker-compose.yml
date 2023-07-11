@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  mymongodb:
+    image: "mongo"
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - /home/mariam/Devopstrain/mongo-backup:/data/db
+    networks:
+      - mern-network
+
+  backend:
+    build: ./backend
+    container_name: node-api
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mymongodb
+    networks:
+      - mern-network
+ersion: "3.8"
+
+s
+  client:
+    build: ./client
+    container_name: react-ui
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+    networks:
+      - mern-network
+ersion: "3.8"
+
+s
+networks:
+  mern-network:
+    driver: bridge
