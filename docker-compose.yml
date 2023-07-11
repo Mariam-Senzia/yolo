@@ -21,9 +21,7 @@ services:
       - mymongodb
     networks:
       - mern-network
-ersion: "3.8"
 
-s
   client:
     build: ./client
     container_name: react-ui
@@ -35,9 +33,7 @@ s
       - backend
     networks:
       - mern-network
-ersion: "3.8"
-
-s
+      
 networks:
   mern-network:
     driver: bridge
