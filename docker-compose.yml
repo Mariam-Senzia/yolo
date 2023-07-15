@@ -4,6 +4,7 @@ services:
   mymongodb:
     image: "mongo"
     container_name: mongo-db
+    restart: always
     ports:
       - "27017:27017"
     volumes:
@@ -27,6 +28,7 @@ services:
     build: ./client
     image: "mariamsenzia/client:v1.0.0"
     container_name: react-ui
+    restart: always
     ports:
       - "3000:3000"
     stdin_open: true
