@@ -23,7 +23,7 @@
 5.Git workflow
         Introduced new files,modified new and existing files then made commits to local repositories and later pushed to remote repositories.
 
-6.The application runs successfully based on a well documented docker compose.One is able to view the application on the specified port.
+6.The application runs successfully based on a well documented docker compose and restart tag keeps it up and running.One is able to view the application on the specified port.
 
 7.Docker tags and names.
     On the docker compose file,the images have semver versions and container names for ease of identification.
