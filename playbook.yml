@@ -7,36 +7,22 @@
     - ansible-roles
 
   tasks:
-    - name: Install docker
-      apt:
-        name:
-          - docker-ce
-          - containerd.io
-
-    - name: add userpermissions
-      shell: "usermod -aG docker vagrant"
-
-    - name: install pip3
-      apt:  
-        name: python3-pip
-        state: present
-
-    - name: install python sdk
-      become_user: vagrant
-      pip:
+   - name: install python sdk
+     become_user: vagrant
+     pip:
         name:
           - docker
           - docker-compose
 
-    - name: start docker service
-      service:
+   - name: start docker service
+     service:
         name: docker
         state: started
         enabled: yes
-      become: true
+     become: true
 
-    - name: run docker compose
-      command: docker compose up -d 
-      args:
-        chdir: /home/Devopstrain/iproject2/yolo
-      become: true 
+   - name: run docker compose
+     command: docker compose up -d 
+     args:
+      chdir: /home/Devopstrain/iproject2/yolo
+     become: true 
