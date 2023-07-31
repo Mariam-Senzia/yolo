@@ -5,6 +5,8 @@
   gather_facts: no
   roles: 
     - ansible-roles
+  vars:
+    docker_url: https://download.docker.com/linux/ubuntu/gpg
 
   tasks:
    - name: install python sdk
@@ -13,7 +15,7 @@
         name:
           - docker
           - docker-compose
-
+    
    - name: start docker service
      service:
         name: docker
