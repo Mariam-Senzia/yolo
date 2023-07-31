@@ -30,3 +30,20 @@
     image: "mariamsenzia/backend:v1.0.0"     container_name: node-api
     image: "mariamsenzia/client:v1.0.0"      container_name: react-ui
     image: "mongo"                           container_name: mongo-db
+
+
+
+
+       ANSIBLE AUTOMATION
+1.Configure ansible environment.
+   Set up the environment by provisioning a vagrant virtual machine with the latest ubuntu server.
+   create hosts file which acts as the inventory and holds ip addresses.
+   Create ansible.cfg to customize yor project.
+
+2.Create playbook.yml
+    Use plays to install and set up docker.
+    Use plays to start seervices and deploy the yolo app
+    Introduce roles to implement docker set up task using ansible galaxy.
+    Introduce variables
+
+3.Exacute playbook.yml    
