@@ -41,9 +41,13 @@
    Create ansible.cfg to customize yor project.
 
 2.Create playbook.yml
-    Use plays to install and set up docker.
-    Use plays to start seervices and deploy the yolo app
+    Use plays to install and set up docker and other dependencies.
+    Use plays to start services.
+    Use plays to copy docker compose to the virtual machine and deploy the Yolo app.
     Introduce roles to implement docker set up task using ansible galaxy.
-    Introduce variables
+    Introduce variables.
+    Introduce tags to specify certain tasks when running.
 
-3.Exacute playbook.yml    
+3.Execute playbook.yml  
+
+4.Confirm if the service deployed are running.
