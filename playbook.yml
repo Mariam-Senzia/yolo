@@ -9,22 +9,24 @@
     docker_url: https://download.docker.com/linux/ubuntu/gpg
 
   tasks:
-   - name: install python sdk
-     become_user: vagrant
-     pip:
-        name:
-          - docker
-          - docker-compose
-    
+      
    - name: start docker service
      service:
         name: docker
         state: started
         enabled: yes
      become: true
+     tags:
+       - start
+
+   - name: copy docker-compose.yml
+     copy: 
+       src: docker-compose.yml
+       dest: /home/vagrant
+     become: true   
 
    - name: run docker compose
-     command: docker compose up -d 
-     args:
-      chdir: /home/Devopstrain/iproject2/yolo
-     become: true 
+     command: docker compose up -d
+     tags:
+       - deploy
+  

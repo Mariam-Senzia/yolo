@@ -30,4 +30,10 @@
   apt:  
     name: python3-pip
     state: present
-   
+
+- name: install python sdk
+  become_user: vagrant
+  pip:
+    name:
+      - docker
+      - docker-compose
