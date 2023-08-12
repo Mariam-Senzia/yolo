@@ -1,0 +1,24 @@
+apiVersion : apps/v1
+kind: Deployment
+
+metadata:
+  name: backend-deployment
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      components: server
+
+  template:
+    metadata:
+      labels:
+        components: server
+
+    spec:
+      containers:
+        - name: node-api
+          image: mariamsenzia/backend:v1.0.0
+          ports:
+            - containerPort: 5000
