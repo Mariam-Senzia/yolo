@@ -51,3 +51,27 @@
 3.Execute playbook.yml  
 
 4.Confirm if the service deployed are running.
+
+
+
+
+
+        KUBERNETES DEPLOYMENT
+1.Choice of kubernetes Objects used for deployment.
+    Created deployment.yml files that contain the following obejects:
+       1. apiVersion  - states the verion of k8s Api used to create the project.
+       2. kind        - states the kind of object you want to create e.g Deployment & Service.
+       3. metadata    - identifies the project using the name string.
+       4. spec        - has the desired specifications.
+                      - contains objects like replicas,template,selectors and spec which contains specifications of the containers.
+
+    In the mongo-deployment.yml,the spec object included volumes and volumeMounts since the use of persistent volumes was used. Secret object was also used to store the passowrd.
+
+
+2.Method used to expose pods to internet traffic.
+    Ingress was used to expose HTTP routes from outside the cluster to services withiun the cluster.
+    Created & configured ingress-service.yml to expose the pods.
+
+3. Use of persistent storage.
+    Introduced persistent volumes and configured mongo-volumes.yml.Attached the pvc file to pods so that the k8s gets the requested storage.
+    pvc volumes isolates data from containers & backs it up incase a pod crashes.    
