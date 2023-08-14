@@ -28,6 +28,7 @@ YOLOMY MERN STACK APPLICATION
 This is a MERN stack application based on Mongo DB,Express,React and Nodejs.The application is an e-commerce website that doubles-up as a dashboard where you can load retail products on to the site.The client is built with React while the backend is built with Express and Node.js.Database connection in the backend is handled by Mongo DB.
 
 ##Installation
+
 To get the app up and running,I created dockerfiles on the backend and client.
 
 I then created a docker compose to containerize and connect the backend and client.
@@ -46,3 +47,16 @@ To stop the application,run  Docker compose down.
 ##Test
 
 Test out the functionality by adding a product through the provided form to test out "Add product" functionality.
+
+
+##Deploy
+
+Create and configure deployment.yml files. 
+
+Create and configure service.yml files.
+
+Create and configure ingress.yml file to expose the services within the cluster.
+
+Deploy the application on Google Kubernetes engine.
+
+Link: 35.226.62.225/ 
