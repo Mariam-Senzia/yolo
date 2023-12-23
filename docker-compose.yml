@@ -30,7 +30,7 @@ services:
     container_name: react-ui
     restart: always
     ports:
-      - "3000:3000"
+      - "3001:3001"
     stdin_open: true
     tty: true
     depends_on:
